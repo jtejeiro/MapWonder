@@ -1,11 +1,11 @@
-# SuperBank iOS
+# MapWonder iOS
 
 <p align="justify">
     <img src="https://img.shields.io/badge/Swift-5-orange.svg" />
     <img src="https://img.shields.io/badge/Platforms-iOS-blue.svg?style=flat" />
 </p>
 
-Aplicativo desarrollado en IOS para una prueba. En arquitectura VIPER 🚀.
+Aplicativo desarrollado en IOS para visualizar puntos de interes. En arquitectura VIPER 🚀.
 
 ## Requerimientos
 
