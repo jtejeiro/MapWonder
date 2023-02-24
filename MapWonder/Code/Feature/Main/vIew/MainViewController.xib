@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="MapWonder" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="Spw-hx-fiU" id="U3v-6F-l0A"/>
+                <outlet property="heightCollectionConstraint" destination="bLg-tf-KLO" id="Iu6-TG-0Wu"/>
+                <outlet property="mapView" destination="ZVr-aA-2ZD" id="s3w-Oc-oIg"/>
+                <outlet property="searchBar" destination="aWZ-xI-rOs" id="sxE-Mv-rud"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVr-aA-2ZD">
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <standardMapConfiguration key="preferredConfiguration"/>
+                </mapView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-hx-fiU">
+                    <rect key="frame" x="0.0" y="698" width="393" height="120"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="bLg-tf-KLO"/>
+                    </constraints>
+                    <collectionViewLayout key="collectionViewLayout" id="Pwu-e8-D8E"/>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ax-6I-s8E">
+                    <rect key="frame" x="130.66666666666666" y="638" width="131.99999999999997" height="40"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Wfv-ZY-Kwm">
+                            <rect key="frame" x="10" y="10" width="112" height="20"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJO-Hb-odJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="aOV-l1-v4D"/>
+                                        <constraint firstAttribute="height" constant="20" id="yTC-At-bM1"/>
+                                    </constraints>
+                                    <color key="tintColor" systemColor="systemPinkColor"/>
+                                    <state key="normal" image="ic_eye"/>
+                                    <connections>
+                                        <action selector="clickShowListMap:" destination="-1" eventType="touchUpInside" id="rPc-4Z-lV3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGq-GP-VD7">
+                                    <rect key="frame" x="46" y="0.0" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="qRS-qz-19R"/>
+                                        <constraint firstAttribute="height" constant="20" id="rC1-HD-CdK"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="ic_focus"/>
+                                    <connections>
+                                        <action selector="clickCenterMap:" destination="-1" eventType="touchUpInside" id="uNP-vU-hFp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27n-sv-Ijm">
+                                    <rect key="frame" x="92" y="0.0" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="QSe-1j-BVw"/>
+                                        <constraint firstAttribute="height" constant="20" id="zat-cJ-kW2"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="ic_refresh-page-option"/>
+                                    <connections>
+                                        <action selector="clickReloadMap:" destination="-1" eventType="touchUpInside" id="4Rw-az-3ze"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Wfv-ZY-Kwm" secondAttribute="bottom" constant="10" id="Bjn-o7-u0M"/>
+                        <constraint firstAttribute="trailing" secondItem="Wfv-ZY-Kwm" secondAttribute="trailing" constant="10" id="FPo-kh-AEx"/>
+                        <constraint firstItem="Wfv-ZY-Kwm" firstAttribute="top" secondItem="8ax-6I-s8E" secondAttribute="top" constant="10" id="JTk-m9-Ozc"/>
+                        <constraint firstItem="Wfv-ZY-Kwm" firstAttribute="leading" secondItem="8ax-6I-s8E" secondAttribute="leading" constant="10" id="Tzv-Z7-hLi"/>
+                    </constraints>
+                </view>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="aWZ-xI-rOs">
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Spw-hx-fiU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BPX-GI-33I"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZVr-aA-2ZD" secondAttribute="trailing" id="Bxk-XW-1hR"/>
+                <constraint firstItem="Spw-hx-fiU" firstAttribute="top" secondItem="8ax-6I-s8E" secondAttribute="bottom" constant="20" id="GQv-xW-Bhs"/>
+                <constraint firstItem="ZVr-aA-2ZD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Wiv-80-BKn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Spw-hx-fiU" secondAttribute="trailing" id="kkG-J6-EMg"/>
+                <constraint firstAttribute="bottom" secondItem="ZVr-aA-2ZD" secondAttribute="bottom" id="pab-Xm-i8P"/>
+                <constraint firstItem="aWZ-xI-rOs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="phD-RK-hDJ"/>
+                <constraint firstItem="ZVr-aA-2ZD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qxD-LH-I0B"/>
+                <constraint firstItem="8ax-6I-s8E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ryt-9X-eC0"/>
+                <constraint firstItem="aWZ-xI-rOs" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tLb-CC-TyM"/>
+                <constraint firstItem="aWZ-xI-rOs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xhe-J7-0e8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Spw-hx-fiU" secondAttribute="bottom" id="yZg-Pn-Psz"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_eye" width="512" height="512"/>
+        <image name="ic_focus" width="512" height="512"/>
+        <image name="ic_refresh-page-option" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
