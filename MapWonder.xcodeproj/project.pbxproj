@@ -358,7 +358,6 @@
 				465A5F4D29A6BF9E00343E9B /* Sources */,
 				465A5F4E29A6BF9E00343E9B /* Frameworks */,
 				465A5F4F29A6BF9E00343E9B /* Resources */,
-				465834C629A91A86001BCDAB /* Run Swiftlint Script */,
 			);
 			buildRules = (
 			);
@@ -442,7 +441,6 @@
 			mainGroup = 465A5F4829A6BF9E00343E9B;
 			packageReferences = (
 				465A5FC729A7DF3100343E9B /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				467C59C729A9239000EA93AE /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 465A5F5229A6BF9E00343E9B /* Products */;
 			projectDirPath = "";
@@ -483,27 +481,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		465834C629A91A86001BCDAB /* Run Swiftlint Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Swiftlint Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		465A5F4D29A6BF9E00343E9B /* Sources */ = {
@@ -885,14 +862,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.0.0;
-			};
-		};
-		467C59C729A9239000EA93AE /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint";
-			requirement = {
-				branch = main;
-				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

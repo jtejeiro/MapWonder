@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 
+@MainActor
 @objc final class MainConfigurator: NSObject {
     
     @objc class func createModule() -> UIViewController {

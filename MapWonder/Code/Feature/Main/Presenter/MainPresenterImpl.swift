@@ -7,6 +7,7 @@
 import UIKit
 import Foundation
 
+@MainActor
 class MainPresenterImpl{
     
     // MARK: - Properties
@@ -27,7 +28,7 @@ class MainPresenterImpl{
 extension MainPresenterImpl: MainPresenter {
  
     func viewDidLoad() {
-        Task.init(priority: .userInitiated) {
+        Task {
             let poisResponse = try await fetchedPoisApiClient()
             setPoisApiClient(model: poisResponse)
         }
@@ -55,7 +56,7 @@ extension MainPresenterImpl: MainPresenter {
     
     func reloadPoisApiClient() {
         interactor?.removePoisSessionManager()
-        Task.init(priority: .userInitiated) {
+        Task {
             if let poisResponse = try await fetchedPoisApiClient() {
                 setPoisApiClient(model: poisResponse)
             }
