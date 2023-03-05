@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import Combine
 
 class MainViewController: BaseViewController {
     // MARK: - Properties
@@ -18,6 +19,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     private var isCollectionView:Bool = false
+    var cancellables = Set<AnyCancellable>()
     
     //MARK: - View Life Cycle Methods.
     override func viewDidLoad() {
@@ -94,7 +96,15 @@ private extension MainViewController {
     // MARK: - Setup
     func setupInit() {
         self.navigationItem.title = "Stadium"
-        self.searchBar.delegate = self
+        createrBindingViewWithPresenter()
+    }
+    
+    func createrBindingViewWithPresenter() {
+        searchBar
+            .searchTextField
+            .textPublisher
+            .assign(to: \MainPresenterImpl.textFilter, on: (presenter as! MainPresenterImpl))
+                .store(in: &cancellables)
     }
     
     func setupCollectionView(){
@@ -219,6 +229,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func goToCollectionCell(row:Int){
+        
+        if presenter?.getlistPoisCount() == 1 {
+            return
+        }
+        
         DispatchQueue.main.async {
             let allWidthCollection:CGFloat = self.collectionView.collectionViewLayout.collectionViewContentSize.width
             let spaceCellWidth:CGFloat = allWidthCollection / CGFloat(self.presenter?.getlistPoisCount() ?? 0)
@@ -227,20 +242,4 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             self.collectionView.setContentOffset(point, animated: true)
         }
     }
-}
-
-extension MainViewController: UISearchBarDelegate{
-    
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        presenter?.actionSearchBarButtonClicked(text: searchBar.text ?? "" )
-        self.searchBar.endEditing(true)
-        self.startLoading()
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        presenter?.actionSearchBarButtonClicked(text: searchBar.text ?? "" )
-        self.startLoading()
-    }
-    
 }

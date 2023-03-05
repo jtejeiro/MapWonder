@@ -42,6 +42,7 @@
 		465A5FCB29A804E000343E9B /* PoisSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A5FCA29A804E000343E9B /* PoisSessionManager.swift */; };
 		465A5FCF29A829BB00343E9B /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A5FCD29A829BB00343E9B /* MainCollectionViewCell.swift */; };
 		465A5FD029A829BB00343E9B /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465A5FCE29A829BB00343E9B /* MainCollectionViewCell.xib */; };
+		46D9AA5529B0CBD800E76469 /* ExtUIkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D9AA5429B0CBD800E76469 /* ExtUIkit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		465A5FCA29A804E000343E9B /* PoisSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisSessionManager.swift; sourceTree = "<group>"; };
 		465A5FCD29A829BB00343E9B /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		465A5FCE29A829BB00343E9B /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
+		46D9AA5429B0CBD800E76469 /* ExtUIkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtUIkit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				465A5F8929A6C11A00343E9B /* MockManager.swift */,
 				465A5F8729A6C11A00343E9B /* Utils.swift */,
 				465A5FC329A7CE6000343E9B /* CalloutView.swift */,
+				46D9AA5429B0CBD800E76469 /* ExtUIkit.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				465A5FC229A7CDF100343E9B /* MapAnnotationView.swift in Sources */,
 				465A5FBB29A7AE0B00343E9B /* MainViewModel.swift in Sources */,
 				465A5FB729A6D2E300343E9B /* MainProtocols.swift in Sources */,
+				46D9AA5529B0CBD800E76469 /* ExtUIkit.swift in Sources */,
 				465A5F5729A6BF9E00343E9B /* SceneDelegate.swift in Sources */,
 				465A5FBD29A7CD4600343E9B /* ExtMapView.swift in Sources */,
 				465A5F8A29A6C11A00343E9B /* Utils.swift in Sources */,

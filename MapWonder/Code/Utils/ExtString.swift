@@ -23,7 +23,7 @@ extension String {
     }
     
     func stringSeparatingCharactersWithString(_ separatedBy: String? = nil) -> [String] {
-        var char = separatedBy ?? ","
+        let char = separatedBy ?? ","
         return self.components(separatedBy: char)
     }
     

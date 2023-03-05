@@ -6,6 +6,7 @@
 //
 import UIKit
 import Foundation
+import Combine
 
 @MainActor
 class MainPresenterImpl{
@@ -17,10 +18,16 @@ class MainPresenterImpl{
     
     // MARK: - Var
     var viewModel:MainViewModel!
+    
+    @Published
     var textFilter:String = ""
+    
+    
+    var cancellables = Set<AnyCancellable>()
     
     // MARK: - Init
     init() {
+        subscribeFilter()
     }
     
 }
@@ -32,6 +39,7 @@ extension MainPresenterImpl: MainPresenter {
             let poisResponse = try await fetchedPoisApiClient()
             setPoisApiClient(model: poisResponse)
         }
+      
     }
     
     func viewWillAppear() {
@@ -49,7 +57,7 @@ extension MainPresenterImpl: MainPresenter {
         let listPois = viewModel.listPois
         
         if getTextFilter() != "" {
-            return listPois.filter(({ $0.title?.uppercased().hasPrefix(getTextFilter()) ?? false }))
+            return listPois.filter(({ $0.title?.lowercased().hasPrefix(getTextFilter()) ?? false }))
         }
         return listPois
     }
@@ -87,12 +95,22 @@ extension MainPresenterImpl: MainInteractorCallback {
 // MARK: - Private methods
 private extension MainPresenterImpl {
     
+    func subscribeFilter(){
+        $textFilter
+            .debounce(for: 0.3, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { value in
+                print(value)
+            self.actionSearchBarButtonClicked(text: value)
+        }.store(in: &cancellables)
+    }
+    
     func setTextFilter(_ text:String){
         self.textFilter = text
     }
     
     func getTextFilter() -> String {
-        return textFilter.uppercased()
+        return textFilter.lowercased()
     }
     
     func setPoisApiClient(model:PoisResponse?){
